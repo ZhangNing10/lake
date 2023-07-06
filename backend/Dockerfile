@@ -168,8 +168,8 @@ COPY --from=build /app/resources /app/resources
 ENV PATH="/app/bin:${PATH}"
 
 RUN chmod -R devlake:devlake /app
-#add tini, prevent zombie process
 
+#add tini, prevent zombie process
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
 CMD ["lake"]
